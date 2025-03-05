@@ -71,7 +71,6 @@ jobs:
             echo "Starting new container..."
             docker run -d \
               --name mistral_bot \
-              -p 8001:8000 \
               -e API_ID="${{ secrets.API_ID }}" \
               -e API_HASH="${{ secrets.API_HASH }}" \
               -e BOT_TOKEN="${{ secrets.BOT_TOKEN }}" \

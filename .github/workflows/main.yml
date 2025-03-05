@@ -71,4 +71,9 @@ jobs:
             docker run -d \
               --name mistral_bot \
               -p 8000:8000 \
+              -e API_ID="${{ secrets.API_ID }}" \
+              -e API_HASH="${{ secrets.API_HASH }}" \
+              -e BOT_TOKEN="${{ secrets.BOT_TOKEN }}" \
+              -e API_TOKEN="${{ secrets.API_TOKEN }}" \
+              -e MISTRAL_TOKEN="${{ secrets.MISTRAL_TOKEN }}" \
               ${{ secrets.DOCKER_USERNAME }}/mistral_bot:latest

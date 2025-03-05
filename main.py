@@ -27,8 +27,6 @@ async def echo(_, message: Message):
             )
     except AttributeError:
         pass
-    except RateLimitError:
-        await bot.send_message(chat_id=message.chat.id, text='Лимит запросов за час блять')
     except SDKError:
         await bot.send_message(chat_id=message.chat.id, text='Лимит запросов за час блять')
 

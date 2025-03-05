@@ -1,6 +1,5 @@
 from pyrogram import Client
 from pyrogram.types import Message
-from openai import RateLimitError
 from mistralai import Mistral
 from mistralai.models.sdkerror import SDKError
 

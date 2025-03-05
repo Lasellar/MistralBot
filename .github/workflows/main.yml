@@ -65,11 +65,11 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/mistral_bot:latest
             
             echo "Stopping and removing old container..."
-            docker stop mistral_bot || true
-            docker rm mistral_bot || true
+            sudo docker stop mistral_bot || true
+            sudo docker rm mistral_bot || true
             
             echo "Starting new container..."
-            docker run -d \
+            sudo docker run --restart=on-failure -d \
               --name mistral_bot \
               -e API_ID="${{ secrets.API_ID }}" \
               -e API_HASH="${{ secrets.API_HASH }}" \

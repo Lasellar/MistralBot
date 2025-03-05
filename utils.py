@@ -1,7 +1,7 @@
 from settings import SYSTEM
 
 
-def gpt_4o_response(client, request, system=SYSTEM):
+def mistral_response(client, request, system=SYSTEM):
     response = client.chat.complete(
         model='mistral-large-latest',
         messages=[
